@@ -15,7 +15,7 @@ if (isset($_POST['insumo']) && isset($_SESSION['usuario'])) {
         $query = "SELECT Insumos.nombre, Insumos.precio
             FROM Insumos, Usuarios, Inventario
             WHERE Usuarios.usuario= '$usuario' and
-                  Insumos.Nombre = $insumo and
+                  Insumos.Nombre = '$insumo' and
                   Usuarios.idUsuario = Inventario.Usuarios_idUsuario and
                   Inventario.Insumos_idInsumos = Insumos.idInsumos";
 

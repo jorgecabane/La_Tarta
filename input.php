@@ -14,7 +14,7 @@
                 "type": "post",
                 "async": true,
                 "success": function(prod) {
-                    if (prod == 0) {
+                    if (prod == 'false') {
                         $('#error').html('').html('<div class="alert alert-warning">Error!</div>');
                         $('#barra').select();
                     }//if
@@ -23,7 +23,7 @@
                         
                         //manejo del Jason!
                         prod=$.parseJSON(prod);
-                    $('#carro').prepend('<div class="alert alert-info"><span class="label label-info"><strong>'+prod['nombre']+'</strong></span> Precio <span class="label">'+prod['precio']+'</span> <a class="close" data-dismiss="alert" href="#">&times;</a></div>');    
+                    $('#carro').prepend('<div codigo="'+prod['Codigo']+'" class="alert alert-info"><span class="label label-info"><strong>'+prod['nombre']+'</strong></span> Precio <span class="label">'+prod['precio']+'</span> <a class="close" data-dismiss="alert" href="#">&times;</a></div>');    
                   
                         
                         $('#error').html('');
@@ -39,6 +39,13 @@
         //alert(id);
     });
 </script>
+
+
+
+
+
+
+
 
 
 

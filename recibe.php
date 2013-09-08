@@ -23,7 +23,7 @@ $return_arr = array();
 if ($conn)
 {
     $ac_term = "%".$_GET['term']."%";
-    $query = "SELECT * FROM states where state like :term";
+    $query = "SELECT * FROM Inventario where state like :term";
     $result = $conn->prepare($query);
     $result->bindValue(":term",$ac_term);
     $result->execute();

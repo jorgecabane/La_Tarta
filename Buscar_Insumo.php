@@ -4,7 +4,7 @@ session_start();
 
 require_once 'conexion.php';
 // Conectar a la base de datos
-$_POST['id'] = 12345;
+//$_POST['id'] = 12345;
 $_SESSION['usuario'] = 'admin';
 
 if (isset($_POST['id']) && isset($_SESSION['usuario'])) {
@@ -20,10 +20,16 @@ if (isset($_POST['id']) && isset($_SESSION['usuario'])) {
                   Inventario.Insumos_idInsumos = Insumos.idInsumos";
 
         //echo $query;
-        $resultado = mysql_query($query) or die(mysql_error());
+        $resultado = mysql_query($query);
 
-        $row2 = mysql_fetch_assoc($resultado);
-        echo json_encode($row2);
+        if ($resultado) {
+            $row2 = mysql_fetch_assoc($resultado);
+            echo json_encode($row2);
+        } else {
+            echo 0;
+        }
+    } else {
+        echo 0;
     }
 }
 ?>

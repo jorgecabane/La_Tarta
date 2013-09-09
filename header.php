@@ -3,10 +3,14 @@
         <meta charset="utf-8">
         <title></title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-        <!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+        <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		
+		<!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><!-- JQUERY-->
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script><!-- JQUERYUI-->
+		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script><!-- JQUERYUI-->
     </head>
     <body style="background: rgb(30,87,153); /* Old browsers */
           background: -moz-linear-gradient(-45deg,  rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6+ */

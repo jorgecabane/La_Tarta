@@ -1,3 +1,6 @@
+<?php include('header.php');?>
+
+<input type="text" id="ingresoInsumos">
 <script>
         $("#ingresoInsumos").autocomplete({
             /**
@@ -11,14 +14,14 @@
             source: function(request, response) {
 
                 $.ajax({
-                    url: "../../../ajax/autocompleteAlergias.php",
+                    url: "recibe.php",
                     data: {
                         name_startsWith: request.term
 
                     },
                     type: "post",
                     success: function(data) {
-                        var output = jQuery.parseJSON(data);
+                        var output = $.parseJSON(data);
 
                         response($.map(output, function(item) {
                             return {
@@ -31,12 +34,9 @@
                 });//end ajax
             }, // end source
             select: function(event, ui) {
-
+			
                 var nombre = ui.item.nombre
-          
-
-                $("#alergias_seleccionadas").removeAttr('nombre');
-            },
+          },
             minLength: 2,
             open: function() {
                 $(this).removeClass("ui-corner-all").addClass("ui-corner-top");

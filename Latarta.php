@@ -2,6 +2,7 @@
 
     session_start();
     include_once "conexion.php";
+    include "header.php";
 		if (isset($_SESSION['s_username'])) {
 	
 	
@@ -12,10 +13,10 @@
 La Tarta
 
 <a href="Venta.php">Venta</a>
-<a href="ingresoInsumos.php">Ingreso Insumos</a>
+<a href="IngresoInsumos.php">Ingreso Insumos</a>
 <a href="IngresoClientes.php">Ingreso Clientes</a>
 <a href="ResumenProfesores.php">Resumen Profesores</a>
-<a href="ResumenInsumos.php">Resumen Insumos</a>
+<a href="inventario.php">Resumen Insumos</a>
 </html>
 
 

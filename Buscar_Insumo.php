@@ -13,17 +13,18 @@ if (isset($_POST['id']) && isset($_SESSION['usuario'])) {
     if (is_numeric($id)) {
 
         $query = "SELECT Insumos.Codigo, Insumos.nombre, Insumos.precio
-            FROM Insumos, Usuarios, Inventario
-            WHERE Usuarios.usuario= '$usuario' and
-                  Insumos.Codigo = $id and
-                  Usuarios.idUsuario = Inventario.Usuarios_idUsuario and
-                  Inventario.Insumos_idInsumos = Insumos.idInsumos";
+            FROM Insumos
+            WHERE Insumos.Codigo = '$id' ";
 
         //echo $query;
         $resultado = mysql_query($query) or die(mysql_error());
 
-        $row2 = mysql_fetch_assoc($resultado);
-        echo json_encode($row2);
+        if ($resultado) {
+            $row2 = mysql_fetch_assoc($resultado);
+            echo json_encode($row2);
+        } else {
+            echo 0;
+        }
     }
 }
 ?>

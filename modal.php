@@ -7,11 +7,14 @@ include "conexion.php";
         <h3 id="myModalLabel">Pago con Tarjeta</h3>
     </div>
     <div class="modal-body">
-        <p></p>
+       <center> <div class="btn-group" data-toggle="buttons-radio">
+  <button type="button" class="btn btn-success btn-large">Debito</button>
+  <button type="button" class="btn btn-warning btn-large">Credito</button>
+</div></center>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
+        <button class="btn btn-danger" id="ventaTarjeta">Terminar Venta</button>
     </div>
 </div>
 
@@ -27,8 +30,8 @@ include "conexion.php";
         <div class="alert alert-success">Vuelto: <h4 class="vuelto"><strong></strong></h4></div>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
+        <button class="btn btn-danger" id="ventaCash">Terminar Venta</button>
     </div>
 </div>
 
@@ -61,8 +64,8 @@ include "conexion.php";
         </div>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Volver</button>
+        <button class="btn btn-danger" id="ventaProfesor">Save changes</button>
     </div>
 </div>
 <script>
@@ -92,14 +95,24 @@ include "conexion.php";
     });
 </script>
 <script>
-    var pedro = $('#cash');
-$('#myModal2').on('show',function(){
-    pedro.focus();
-    $('.total').text($('#lado').text());
-    
-    
-    
-});
+    $('#myModal2').on('shown.bs.modal', function() {
+        var pedro = $('#cash');
+
+        pedro.focus();
+        $('.total').text($('#lado').text());
+
+        pedro.keyup(function() {
+            var total = $('.total').text();
+            var cash = pedro.val();
+            var cambio = cash - total;
+
+            $('.vuelto').text(cambio);
+            
+        });
 
 
-</script>
+
+    });
+
+
+</script>   

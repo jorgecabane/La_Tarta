@@ -1,6 +1,18 @@
-<?php include('header.php');?>
+<?php include('header.php');
+      include ('conexion.php');?>
 
-<input type="text" id="ingresoInsumos">
+<?php
+$query="Select Nombre from Insumos";
+$resultado=mysql_query($query);
+if($resultado){
+echo "<select name=insumos>";
+while($row=mysql_fetch_assoc($resultado))
+{
+echo "<option>".$row['Nombre']."</option>";
+}
+echo "</select>";
+}
+?>
 <script>
         $("#ingresoInsumos").autocomplete({
             /**

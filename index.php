@@ -6,7 +6,7 @@
 
     function verificar_login($user,$password,&$result)
     {
-	        $rec = mysql_query("SELECT * FROM usuarios WHERE usuario = '$user' and password = '$password'") or die(mysql_error() ) ;
+	        $rec = mysql_query("SELECT * FROM Usuarios WHERE usuario = '$user' and password = '$password'") or die(mysql_error() ) ;
        
         $count = 0;
         while($row = mysql_fetch_object($rec))
@@ -24,13 +24,13 @@
             return 0;
         }
     }
-  if(!isset($_SESSION['userid']))
-    {
+
         if(isset($_POST['login']))
         {
             if(verificar_login($_POST['user'],$_POST['password'],$result) == 1)
             {
-                                          $query = mysql_query("SELECT usuario FROM usuarios WHERE usuario = '$user'") or die(mysql_error());
+			$user=$_POST['user'];
+                                          $query = mysql_query("SELECT usuario FROM Usuarios WHERE usuario = '$user'") or die(mysql_error());
 $row2 = mysql_fetch_array($query);
 $_SESSION["s_username"] = $row2;
                     header("location:Latarta.php");
@@ -89,6 +89,6 @@ $_SESSION["s_username"] = $row2;
 		    <div><input name="login" type="submit" value="login"></div>
 			</form>
         <?php
-    }
+    
 
 ?>

@@ -14,7 +14,7 @@ La Tarta
 
 <a href="Venta.php">Venta</a>
 <a href="ingresoInsumoNuevo.php">Ingreso Insumo Nuevo</a>
-<a href="IngresoClientes.php">Ingreso Clientes</a>
+<a href="ingresoProfesorNuevo.php">Ingreso Profesor Nuevo</a>
 <a href="ResumenProfesores.php">Resumen Profesores</a>
 <a href="inventario.php">Resumen Insumos</a>
 </html>

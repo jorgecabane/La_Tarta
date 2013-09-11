@@ -22,11 +22,12 @@ document.form1.codigo.value = "";
 
 <form name="form1" action="ingresandoProducto.php" method="POST">
 <div><label>Nombre Producto: </label><input name="producto" type="text" ></div>
-<div><label>Codigo:          </label><input name="codigo" onFocus=clear_textbox() value="Utilice lector de barra o manual.">
+<div><label>Codigo:          </label><input name="codigo" onFocus=clear_textbox() value="Utilice lector de barra o manual."></div>
 <div><label>Precio: </label><input name="precio" type="text" ></div>
 <input type="submit" value="Ingresar">
 </form>
-	
+
+<div>	<a style="color: #F1F1F1;"href='Latarta.php'/> Volver </a>		</div>	
 			
 			
 <?php 

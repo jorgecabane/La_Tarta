@@ -62,7 +62,7 @@ if (isset($_SESSION["usuario"])) {
 
             <?php //require.... ?>
         </div>
-
+<div>	<a style="color: #F1F1F1;"href='Latarta.php'/> Volver </a>		</div>
 
 
     </body>

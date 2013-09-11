@@ -35,5 +35,6 @@ echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>" ;
         </div>
     </div>
 </div>
+<div>	<a style="color: #F1F1F1;"href='Latarta.php'/> Volver </a>		</div>
 </body>
 </html>

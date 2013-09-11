@@ -8,14 +8,14 @@
 		if (isset($_SESSION["usuario"]))
 		{
 		
-		if (isset($_POST['producto'])    &&    isset($_POST['codigo'])            &&  isset($_POST['precio']) )    {
+		if (isset($_POST['nombre'])    &&    isset($_POST['apellido'])   )    {
 		
-		$nombre=$_POST['producto'];
-		$codigo=$_POST['codigo'];
-		$precio=$_POST['precio'];
+		$nombre=$_POST['nombre'];
+		$apellido=$_POST['apellido'];
 		
-		$query = "Insert into Insumos
-		Values (NULL,'$nombre',$codigo,$precio)";
+		
+		$query = "Insert into Profesores
+		Values (NULL,'$nombre',$apellido,0)";
     //echo $query;
     $resultado = mysql_query($query) or die(mysql_error());
 		
@@ -26,7 +26,7 @@
 		} // si funciono el query
 		else
 		{
-		echo"Ocurrio un error <a href='ingresoInsumoNuevo.php'/> Volver </a> ";
+		echo"Ocurrio un error <a href='ingresoProfesorNuevo.php'/> Volver </a> ";
 		
 		} // no funciono el query
 		

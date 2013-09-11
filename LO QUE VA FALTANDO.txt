@@ -1,0 +1,12 @@
+Modificable
+
+agregar session con la id del usuario
+
+Boton de atras en cada pagina.
+
+Arreglar ingresaVenta, solo funciona si es un array ---> por el for each. caso de que la compra sea sola una cuestion.
+
+Por alguna razon, no funciona el codigo de ingresar insumo y profe nuevo en netbau, pero si en localhost
+
+agregar una confirmacion de que si se ingreso en la pagina ingresos.
+

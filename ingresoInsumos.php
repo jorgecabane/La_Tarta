@@ -1,7 +1,7 @@
-<?php include('header.php');
-      include ('conexion.php');?>
-
-<?php
+<?php 
+include('header.php');
+    
+include ('conexion.php');
 $query="Select Nombre from Insumos";
 $resultado=mysql_query($query);
 if($resultado){

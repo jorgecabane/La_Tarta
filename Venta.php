@@ -1,6 +1,9 @@
 <?php
+session_start();
+
 include "header.php";
 include "modal.php";
+if (isset($_SESSION["usuario"])) {
 ?>
         <div class="container-fluid">
             <div class="span12">
@@ -64,3 +67,10 @@ include "modal.php";
 
     </body>
 </html>
+<?php
+
+}
+else{
+echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>" ;
+}
+?>

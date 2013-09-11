@@ -3,7 +3,7 @@
     session_start();
     include_once "conexion.php";
     include "header.php";
-		if (isset($_SESSION['s_username'])) {
+		if (isset($_SESSION["usuario"])) {
 	
 	
 	
@@ -13,7 +13,7 @@
 La Tarta
 
 <a href="Venta.php">Venta</a>
-<a href="IngresoInsumos.php">Ingreso Insumos</a>
+<a href="ingresoInsumoNuevo.php">Ingreso Insumo Nuevo</a>
 <a href="IngresoClientes.php">Ingreso Clientes</a>
 <a href="ResumenProfesores.php">Resumen Profesores</a>
 <a href="inventario.php">Resumen Insumos</a>
@@ -32,8 +32,9 @@ La Tarta
 
 <?php 
 echo '<a href="logout.php">Logout</a>';
-}else{
+}
+else
+{
 echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>" ;
-
 }
 ?>

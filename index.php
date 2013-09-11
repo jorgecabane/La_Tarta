@@ -30,11 +30,11 @@
             if(verificar_login($_POST['user'],$_POST['password'],$result) == 1)
             {
 			$user=$_POST['user'];
-                                          $query = mysql_query("SELECT usuario FROM Usuarios WHERE usuario = '$user'") or die(mysql_error());
-$row2 = mysql_fetch_array($query);
-$_SESSION["s_username"] = $row2;
+                                          //$query = mysql_query("SELECT usuario FROM Usuarios WHERE usuario = '$user'") or die(mysql_error());
+//$row2 = mysql_fetch_assoc($query);
+$_SESSION["usuario"] = $user;
                     header("location:Latarta.php");
-					echo "Has sido logueado correctamente ".$_SESSION['s_username']." ";
+					echo "Has sido logueado correctamente ".$_SESSION['usuario']." ";
             }
             else
             {

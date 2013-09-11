@@ -1,5 +1,7 @@
 <?php
+ session_start();
 include "header.php";
+if (isset($_SESSION["usuario"])) {
 ?>
 <div class="container-fluid">
     
@@ -23,6 +25,11 @@ include "header.php";
                 while ($fil = mysql_fetch_assoc($resultado)) {
                     echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td>" . $fil['S'] . "</td></tr>";
                 }
+				}
+				else
+{
+echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>" ;
+}
                 ?>
             </table>
         </div>

@@ -12,7 +12,7 @@
 
 
 
-                 <form name="form1" action="ingresandoProducto.php" method="POST">
+                 <form name="form1" action="ingresandoProfesor.php" method="POST">
                  <div><label>Nombre: </label><input name="nombre" type="text" ></div>
                  <div><label>Apellido: </label><input name="apellido" type="text"></div>
                  <input type="submit" value="Ingresar">

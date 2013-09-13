@@ -20,31 +20,33 @@ function verificar_login($user, $password, &$result) {
 
 if (isset($_POST['login'])) {
     if (verificar_login($_POST['user'], $_POST['password'], $result) == 1) {
-        $user = $_POST['user'];
+        $user1 = $_POST['user'];
         //$query = mysql_query("SELECT usuario FROM Usuarios WHERE usuario = '$user'") or die(mysql_error());
 //$row2 = mysql_fetch_assoc($query);
-        $user1 = $_SESSION["usuario"];
+        $_SESSION["usuario"]='$user1';
         $queryoli = "Select idUsuario from Usuarios where usuario='$user1'";
-        echo $queryoli;
-        $resultado33 = mysql_query($queryoli) or die(mysql_error());
+       // echo $queryoli;
+        $resultado33 = mysql_query($queryoli) or die(mysql_error());  // sacando el id
 
         if ($resultado33) {
-            $resultado34 = mysql_fetch_assoc($resultado33);
+            $resultado34 = mysql_fetch_assoc($resultado33); // obteniendo el id
             if ($resultado34) {
                 $_SESSION['idusuario']=$resultado34['idUsuario'];  
                // echo $_SESSION['idusuario'];
-            }
-        } else {
-            echo "cagaste";
-        }
+            } // si hay id obtenido
+        } //si corrio el query 
+		else {
+            echo "error";
+        } // si esque el query no funciono
 
 
         header("location:Latarta.php");
         echo "Has sido logueado correctamente " . $_SESSION['usuario'] . " ";
-    } else {
+    } // si funciona verificar usuario
+	else {
         echo '<div class="error">Su usuario es incorrecto, intente nuevamente.</div>';
-    }
-}
+    }// si hay error en verificar el usuario
+} //si esta posteado el login
 ?>
 <style type="text/css">
     *{

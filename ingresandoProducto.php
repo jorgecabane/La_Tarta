@@ -14,8 +14,8 @@
 		$codigo=$_POST['codigo'];
 		$precio=$_POST['precio'];
 		
-		$query = "Insert into Insumos (Nombre, Codigo, precio)
-		Values ('$nombre',$codigo,$precio)";
+		$query = "Insert into Insumos (Nombre, Codigo, precio)                           
+		Values ('$nombre',$codigo,$precio)";                     //este query si funciona
     //echo $query;
     $resultado = mysql_query($query) or die(mysql_error());
     //seleccionar el id del producto recien metio
@@ -23,16 +23,17 @@
             $resultado2=mysql_query($query2) or die(mysql_error());
             $idinsumo=mysql_fetch_assoc($resultado2);
     $holi=$idinsumo['idInsumos'];
+	
     $idusuario=$_SESSION['idusuario'];
     //echo $idusuario;
             //ingresar el producto a inventario
             $query3="Insert into Inventario Values ($holi,$idusuario,0)";
-            $resultado3=  mysql_query($query3);
+            $resultado3=mysql_query($query3);
            
 		
 		if($resultado3 && $resultado2 && $resultado)
 		{
-	
+	//echo $holi;
 		header("location:ingresoInsumoNuevo.php");
 		} // si funciono el query
 		else
@@ -41,17 +42,7 @@
 		
 		} // no funciono el query
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+				
 		
 		} // si estan posteados todos los campos
 		else

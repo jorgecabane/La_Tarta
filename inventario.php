@@ -1,5 +1,6 @@
 <?php
  session_start();
+     include "conexion.php";
 include "header.php";
 if (isset($_SESSION["usuario"])) {
 ?>
@@ -10,7 +11,7 @@ if (isset($_SESSION["usuario"])) {
         <div class="well well-small">
             <table  class="table table-bordered table-striped table-hover table-condensed">
                 <?php
-                include "conexion.php";
+            
 
 
 
@@ -23,7 +24,16 @@ if (isset($_SESSION["usuario"])) {
                 $sql = "SELECT Insumos.Nombre N, Inventario.Stock S FROM Inventario, Insumos, Usuarios  WHERE Insumos.idInsumos=Inventario.Insumos_idInsumos and Inventario.Usuarios_idUsuario=Usuarios.idUsuario";
                 $resultado = mysql_query($sql);
                 while ($fil = mysql_fetch_assoc($resultado)) {
-                    echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td>" . $fil['S'] . "</td></tr>";
+                    echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td><input name='stock' class='input input-small' type='text' placeholder=" . $fil['S'] . "></td></tr>";
+					//$_POST['stock']=$stock;
+					//$_POST['nombre']=$nombre; //del insumo
+//$query1=" Select Inventario.Insumos_idInsumos from Inventario, Insumos where Inventario.Insumos_idInsumos=Insumos.idInsumos and Insumos.Nombre='$nombre' ";
+//$resultado1=mysql_query($query1);
+//$holi=$resultado1['Inventario.Insumos_idInsumos'];
+//$query="UPDATE Inventario set Stock = $stock where Insumos_idInsumos=$holi" ;
+//$resultado=mysql_query($query);
+					
+					
                 }
 				}
 				else

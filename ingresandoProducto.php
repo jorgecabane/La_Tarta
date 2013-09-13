@@ -14,14 +14,25 @@
 		$codigo=$_POST['codigo'];
 		$precio=$_POST['precio'];
 		
-		$query = "Insert into Insumos
-		Values (NULL,'$nombre',$codigo,$precio)";
+		$query = "Insert into Insumos (Nombre, Codigo, precio)
+		Values ('$nombre',$codigo,$precio)";
     //echo $query;
     $resultado = mysql_query($query) or die(mysql_error());
+    //seleccionar el id del producto recien metio
+    $query2 =  "Select idInsumos from Insumos where Nombre='$nombre' ";
+            $resultado2=mysql_query($query2) or die(mysql_error());
+            $idinsumo=mysql_fetch_assoc($resultado2);
+    $holi=$idinsumo['idInsumos'];
+    $idusuario=$_SESSION['idusuario'];
+    //echo $idusuario;
+            //ingresar el producto a inventario
+            $query3="Insert into Inventario Values ($holi,$idusuario,0)";
+            $resultado3=  mysql_query($query3);
+           
 		
-		if($resultado)
+		if($resultado3 && $resultado2 && $resultado)
 		{
-		
+	
 		header("location:ingresoInsumoNuevo.php");
 		} // si funciono el query
 		else

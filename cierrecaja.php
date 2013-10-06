@@ -36,10 +36,10 @@ if (isset($_SESSION["usuario"])) {
 
 
 
-
+<a style="color: #F1F1F1;"href='Latarta.php'/> Volver </a>
 
     <?php
-    echo '<a href="logout.php">Logout</a>';
+   	
 } else {
     echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>";
 }

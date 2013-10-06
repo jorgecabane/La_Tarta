@@ -17,6 +17,7 @@ La Tarta
 <a href="ingresoProfesorNuevo.php">Ingreso Profesor Nuevo</a>
 <a href="ResumenProfesores.php">Resumen Profesores</a>
 <a href="inventario.php">Resumen Insumos</a>
+<a href="cierrecaja.php">Cierre de Caja</a>
 </html>
 
 

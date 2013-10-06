@@ -88,9 +88,9 @@ echo "Venta sin boleta: ".$_SESSION['sinboleta']."<br>";
 echo "Total Ventas: ".($_SESSION['efectivo']+$_SESSION['debito']+$_SESSION['credito']+$_SESSION['vales'])."<br>";
 echo "<form action='cierrecaja1.php' method=POST>
       <p style='color:#81F781'>Ingrese retiro <input type='number' name='retiro'><br>
-      Ingrese Nueva Caja <input type='number' name='retiro'><br></p>
-      </form>";
-echo "<input type='submit' value='Cerrar Caja' class='btn btn-danger'>";
+      Ingrese Nueva Caja <input type='number' name='nuevacaja'><br></p>
+      ";
+echo "<input type='submit' value='Cerrar Caja' class='btn btn-danger'> </form>";
 
 
 
@@ -114,4 +114,5 @@ echo "<input type='submit' value='Cerrar Caja' class='btn btn-danger'>";
     echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>";
 }
 ?>
+
 

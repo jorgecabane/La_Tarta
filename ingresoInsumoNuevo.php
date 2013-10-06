@@ -24,6 +24,7 @@ document.form1.codigo.value = "";
 <div><label>Nombre Producto: </label><input name="producto" type="text" ></div>
 <div><label>Codigo:          </label><input name="codigo" onFocus=clear_textbox() value="Utilice lector de barra o manual."></div>
 <div><label>Precio: </label><input name="precio" type="text" ></div>
+<div><label>Costo: </label><input name="costo" type="text" ></div>
 <input type="submit" value="Ingresar">
 </form>
 

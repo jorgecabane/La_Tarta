@@ -13,9 +13,10 @@
 		$nombre=$_POST['producto'];
 		$codigo=$_POST['codigo'];
 		$precio=$_POST['precio'];
+		$costo=$_POST['costo'];
 		
-		$query = "Insert into Insumos (Nombre, Codigo, precio)                           
-		Values ('$nombre',$codigo,$precio)";                     //este query si funciona
+		$query = "Insert into Insumos (Nombre, Codigo, precio, costo)                           
+		Values ('$nombre',$codigo,$precio,$costo)";                     //este query si funciona
     //echo $query;
     $resultado = mysql_query($query) or die(mysql_error());
     //seleccionar el id del producto recien metio

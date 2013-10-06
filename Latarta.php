@@ -18,6 +18,7 @@ La Tarta
 <a href="ResumenProfesores.php">Resumen Profesores</a>
 <a href="inventario.php">Resumen Insumos</a>
 <a href="cierrecaja.php">Cierre de Caja</a>
+<a href="CambiandoInsumos.php">Cambiar Precio y/o Costo</a>
 </html>
 
 

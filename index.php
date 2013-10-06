@@ -26,12 +26,9 @@ if (isset($_POST['login'])) {
         $_SESSION["usuario"]='$user1';
         $queryoli = "Select idUsuario from Usuarios where usuario='$user1'";
 <<<<<<< HEAD
-<<<<<<< HEAD
        // echo $queryoli;
         $resultado33 = mysql_query($queryoli) or die(mysql_error());  // sacando el id
 =======
-=======
->>>>>>> e9f5c5b9fda5c18eed3641c628784bc7e019a773
         //echo $queryoli;
         $resultado33 = mysql_query($queryoli) or die(mysql_error());
 >>>>>>> e9f5c5b9fda5c18eed3641c628784bc7e019a773

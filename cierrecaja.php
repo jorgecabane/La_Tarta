@@ -12,18 +12,18 @@ if(!$_POST)
 
         <form class="form form-horizontal" action="cierrecaja.php" method="post">
             <h4><p style="color:#81F781">
-                    Caja Inicial   <input class="input input-medium" type="number" name="inicial"><br>
-                    Billetes de 20 <input class="input input-medium" type="number" name="veinte"><br>
-                    Billetes de 10 <input class="input input-medium" type="number" name="diez"><br>
-                    Billetes de 5  <input class="input input-medium" type="number" name="cinco"><br>
-                    Billetes de 2  <input class="input input-medium" type="number" name="dos"><br>
-                    Billetes de 1  <input class="input input-medium" type="number" name="uno"><br>
-                    Monedas        <input class="input input-medium" type="number" name="monedas"><br>
-                    Venta Debito   <input class="input input-medium" type="number" name="debito"><br>
-                    Venta Credito  <input class="input input-medium" type="number" name="credito"><br>
-                    Vales          <input class="input input-medium" type="number" name="vales"><br>
-                    Boleta         <input class="input input-small" type="number" name="inicio">-<input class="input input-small" type="number" name="final"><br>
-                    Total Boletas  <input class="input input-medium" type="number" name="totalboleta"><br>
+                    Caja Inicial   <input style='height:26px' class="input input-medium" type="number" name="inicial"><br>
+                    Billetes de 20 <input style='height:26px' class="input input-medium" type="number" name="veinte"><br>
+                    Billetes de 10 <input style='height:26px' class="input input-medium" type="number" name="diez"><br>
+                    Billetes de 5  <input style='height:26px' class="input input-medium" type="number" name="cinco"><br>
+                    Billetes de 2  <input style='height:26px' class="input input-medium" type="number" name="dos"><br>
+                    Billetes de 1  <input style='height:26px' class="input input-medium" type="number" name="uno"><br>
+                    Monedas        <input style='height:26px' class="input input-medium" type="number" name="monedas"><br>
+                    Venta Debito   <input style='height:26px' class="input input-medium" type="number" name="debito"><br>
+                    Venta Credito  <input style='height:26px' class="input input-medium" type="number" name="credito"><br>
+                    Vales          <input style='height:26px' class="input input-medium" type="number" name="vales"><br>
+                    Boleta         <input style='height:26px' class="input input-small" type="number" name="inicio">-<input class="input input-small" type="number" name="final"><br>
+                    Total Boletas  <input style='height:26px' class="input input-medium" type="number" name="totalboleta"><br>
                                    <input type="submit" value="Calcular" class="btn btn-success">
                                        
                     
@@ -39,18 +39,18 @@ else
 
         <form class="form form-horizontal" action="cierrecaja.php" method="post">
             <h4><p style="color:#81F781">
-                    Caja Inicial   <input class="input input-medium" type="number" name="inicial"><br>
-                    Billetes de 20 <input class="input input-medium" type="number" name="veinte"><br>
-                    Billetes de 10 <input class="input input-medium" type="number" name="diez"><br>
-                    Billetes de 5  <input class="input input-medium" type="number" name="cinco"><br>
-                    Billetes de 2  <input class="input input-medium" type="number" name="dos"><br>
-                    Billetes de 1  <input class="input input-medium" type="number" name="uno"><br>
-                    Monedas        <input class="input input-medium" type="number" name="monedas"><br>
-                    Venta Debito   <input class="input input-medium" type="number" name="debito"><br>
-                    Venta Credito  <input class="input input-medium" type="number" name="credito"><br>
-                    Vales          <input class="input input-medium" type="number" name="vales"><br>
-                    Boleta         <input class="input input-small" type="number" name="inicio">-<input class="input input-small" type="number" name="final"><br>
-                    Total Boletas  <input class="input input-medium" type="number" name="totalboleta"><br>
+                    Caja Inicial   <input style='height:26px' class="input input-medium" type="number" name="inicial"><br>
+                    Billetes de 20 <input style='height:26px' class="input input-medium" type="number" name="veinte"><br>
+                    Billetes de 10 <input style='height:26px' class="input input-medium" type="number" name="diez"><br>
+                    Billetes de 5  <input style='height:26px' class="input input-medium" type="number" name="cinco"><br>
+                    Billetes de 2  <input style='height:26px' class="input input-medium" type="number" name="dos"><br>
+                    Billetes de 1  <input style='height:26px' class="input input-medium" type="number" name="uno"><br>
+                    Monedas        <input style='height:26px' class="input input-medium" type="number" name="monedas"><br>
+                    Venta Debito   <input style='height:26px' class="input input-medium" type="number" name="debito"><br>
+                    Venta Credito  <input style='height:26px' class="input input-medium" type="number" name="credito"><br>
+                    Vales          <input style='height:26px' class="input input-medium" type="number" name="vales"><br>
+                    Boleta         <input style='height:26px' class="input input-small" type="number" name="inicio">-<input class="input input-small" type="number" name="final"><br>
+                    Total Boletas  <input style='height:26px' class="input input-medium" type="number" name="totalboleta"><br>
                     <input type="submit" value="Calcular" class="btn btn-success">
                     
                     
@@ -87,8 +87,8 @@ echo "Total venta con boleta: ".$_SESSION['totalboleta']."<br>";
 echo "Venta sin boleta: ".$_SESSION['sinboleta']."<br>";
 echo "Total Ventas: ".($_SESSION['efectivo']+$_SESSION['debito']+$_SESSION['credito']+$_SESSION['vales'])."<br>";
 echo "<form action='cierrecaja1.php' method=POST>
-      <p style='color:#81F781'>Ingrese retiro <input type='number' name='retiro'><br>
-      Ingrese Nueva Caja <input type='number' name='nuevacaja'><br></p>
+      <p style='color:#81F781'>Ingrese retiro <input style='height:26px' type='number' name='retiro'><br>
+      Ingrese Nueva Caja <input style='height:26px' type='number' name='nuevacaja'><br></p>
       ";
 echo "<input type='submit' value='Cerrar Caja' class='btn btn-danger'> </form>";
 

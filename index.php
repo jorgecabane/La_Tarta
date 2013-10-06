@@ -25,8 +25,13 @@ if (isset($_POST['login'])) {
 //$row2 = mysql_fetch_assoc($query);
         $_SESSION["usuario"]='$user1';
         $queryoli = "Select idUsuario from Usuarios where usuario='$user1'";
+<<<<<<< HEAD
        // echo $queryoli;
         $resultado33 = mysql_query($queryoli) or die(mysql_error());  // sacando el id
+=======
+        //echo $queryoli;
+        $resultado33 = mysql_query($queryoli) or die(mysql_error());
+>>>>>>> e9f5c5b9fda5c18eed3641c628784bc7e019a773
 
         if ($resultado33) {
             $resultado34 = mysql_fetch_assoc($resultado33); // obteniendo el id

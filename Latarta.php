@@ -19,6 +19,7 @@ La Tarta
 <a href="inventario.php">Resumen Insumos</a>
 <a href="cierrecaja.php">Cierre de Caja</a>
 <a href="CambiandoInsumos.php">Cambiar Precio y/o Costo</a>
+<a href="resumencierrescaja.php">Resumen Cierres de Caja</a>
 </html>
 
 

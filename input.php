@@ -1,4 +1,4 @@
-<input type="text" id="barra" class="input-xlarge" placeholder="Ingrese codigo o utilice lector">
+<input style='height:28px' type="number" id="barra" class="input-xlarge" placeholder="Ingrese codigo o utilice lector">
 <script>
     var pepe = $('#barra');
     $(document).ready(function() {

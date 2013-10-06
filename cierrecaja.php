@@ -21,10 +21,10 @@ if(!$_POST)
                     Monedas        <input class="input input-medium" type="number" name="monedas"><br>
                     Venta Debito   <input class="input input-medium" type="number" name="debito"><br>
                     Venta Credito  <input class="input input-medium" type="number" name="credito"><br>
-                    Vales          <input class="input input-medium" type="number" name="valess"><br>
+                    Vales          <input class="input input-medium" type="number" name="vales"><br>
                     Boleta         <input class="input input-small" type="number" name="inicio">-<input class="input input-small" type="number" name="final"><br>
-                    Retiro         <input class="input input-medium" type="number" name="retiro"><br>
-                                   <input type="submit">
+                    Total Boletas  <input class="input input-medium" type="number" name="totalboleta"><br>
+                                   <input type="submit" value="Calcular" class="btn btn-success">
                                        
                     
                     
@@ -51,6 +51,7 @@ else
                     Vales          <input class="input input-medium" type="number" name="vales"><br>
                     Boleta         <input class="input input-small" type="number" name="inicio">-<input class="input input-small" type="number" name="final"><br>
                     Total Boletas  <input class="input input-medium" type="number" name="totalboleta"><br>
+                    <input type="submit" value="Calcular" class="btn btn-success">
                     
                     
                     
@@ -73,17 +74,23 @@ $_SESSION['finalboleta']=$_POST['final'];
 $_SESSION['totalboleta']=$_POST['totalboleta'];
 $_SESSION['totalefectivo']=$veinte+$diez+$cinco+$dos+$uno+$monedas;
 $_SESSION['sinboleta']=(($_SESSION['totalefectivo']-$_SESSION['inicial'])+$_SESSION['credito']+$_SESSION['debito'])-$_SESSION['totalboleta'];
+$_SESSION['efectivo']=($_SESSION['totalefectivo']-$_SESSION['inicial']);
 echo "<p style='color:#81F781'>Resumen cierre de caja<br>";
 echo "Caja Inicial: ".$_SESSION['inicial']."<br>";
 echo "Vales: ".$_SESSION['vales']."<br>";
 echo "Total Efectivo: ".$_SESSION['totalefectivo']."<br>";
 echo "Venta Debito: ".$_SESSION['debito']."<br>";
 echo "Venta Credito: ".$_SESSION['credito']."<br>";
-echo "Venta Efectivo: ".($_SESSION['totalefectivo']-$_SESSION['inicial'])."<br>";
+echo "Venta Efectivo: ".$_SESSION['efectivo']."<br>";
 echo "Boleta Inicial: ".$_SESSION['inicioboleta']." Boleta Final ".$_SESSION['finalboleta']."<br>";
-echo "Total venta con boleta: ".$_SESSION['totalboleta'];
-echo "Venta sin boleta: ".$_SESSION['sinboleta'];
-echo "Total Ventas: ".($_SESSION['totalefectivo']+$_SESSION['debito']+$_SESSION['credito']+$_SESSION['vales']);
+echo "Total venta con boleta: ".$_SESSION['totalboleta']."<br>";
+echo "Venta sin boleta: ".$_SESSION['sinboleta']."<br>";
+echo "Total Ventas: ".($_SESSION['efectivo']+$_SESSION['debito']+$_SESSION['credito']+$_SESSION['vales'])."<br>";
+echo "<form action='cierrecaja1.php' method=POST>
+      <p style='color:#81F781'>Ingrese retiro <input type='number' name='retiro'><br>
+      Ingrese Nueva Caja <input type='number' name='retiro'><br></p>
+      </form>";
+echo "<input type='submit' value='Cerrar Caja' class='btn btn-danger'>";
 
 
 
@@ -107,3 +114,4 @@ echo "Total Ventas: ".($_SESSION['totalefectivo']+$_SESSION['debito']+$_SESSION[
     echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>";
 }
 ?>
+

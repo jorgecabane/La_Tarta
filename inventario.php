@@ -1,6 +1,5 @@
 <?php
  session_start();
-     include "conexion.php";
 include "header.php";
 if (isset($_SESSION["usuario"])) {
 ?>
@@ -11,7 +10,7 @@ if (isset($_SESSION["usuario"])) {
         <div class="well well-small">
             <table  class="table table-bordered table-striped table-hover table-condensed">
                 <?php
-            
+                include "conexion.php";
 
 
 
@@ -21,20 +20,47 @@ if (isset($_SESSION["usuario"])) {
 
 
 
-                $sql = "SELECT Insumos.Nombre N, Inventario.Stock S FROM Inventario, Insumos, Usuarios  WHERE Insumos.idInsumos=Inventario.Insumos_idInsumos and Inventario.Usuarios_idUsuario=Usuarios.idUsuario";
+                $sql = "SELECT Insumos.Nombre N, Inventario.Stock S ,Inventario.Insumos_idInsumos I FROM Inventario, Insumos, Usuarios  WHERE Insumos.idInsumos=Inventario.Insumos_idInsumos and Inventario.Usuarios_idUsuario=Usuarios.idUsuario";
                 $resultado = mysql_query($sql);
+				
                 while ($fil = mysql_fetch_assoc($resultado)) {
-                    echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td><input name='stock' class='input input-small' type='text' placeholder=" . $fil['S'] . "></td></tr>";
-					//$_POST['stock']=$stock;
-					//$_POST['nombre']=$nombre; //del insumo
-//$query1=" Select Inventario.Insumos_idInsumos from Inventario, Insumos where Inventario.Insumos_idInsumos=Insumos.idInsumos and Insumos.Nombre='$nombre' ";
-//$resultado1=mysql_query($query1);
-//$holi=$resultado1['Inventario.Insumos_idInsumos'];
-//$query="UPDATE Inventario set Stock = $stock where Insumos_idInsumos=$holi" ;
-//$resultado=mysql_query($query);
+				echo "<form method='POST' action='inventario.php'>";
+                    echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td><input name='stock' class='input input-small' type='text' placeholder=" . $fil['S'] . ">";
+					//echo "<tr><td> " . $fil['Apellido'].", ".$fil['Nombre']. "</td><td>Saldo:  </td><td><input name='saldo' class='input input-small' type='text' placeholder=" . $fil['Saldo'] . ">";
 					
 					
+					echo "<input type='hidden' name='id' value='".$fil["I"]."'>";
+        echo "<input type='submit' value='Cambiar'>";
+        echo "</form></td></tr>";
                 }
+				
+				if ($_POST['stock']) {
+				
+$stock=$_POST['stock'];
+
+
+$id12=$_POST['id'];
+$query="Select Stock from Inventario where Insumos_idInsumos=$id12";
+$result1=mysql_query($query);
+$result2=mysql_fetch_array($result1);
+$result3= $result2['Stock'];
+$saldo2=$stock+$result3;
+
+$query33="UPDATE Inventario set Stock=$saldo2 where Insumos_idInsumos=$id12" ;    
+
+$resultado23=mysql_query($query33);
+
+
+				print "<meta http-equiv=Refresh content=\"0.0001 ; url=inventario.php\">"; 
+				
+				
+				
+				
+				
+				
+				}
+				
+				
 				}
 				else
 {

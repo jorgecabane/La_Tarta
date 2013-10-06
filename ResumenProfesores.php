@@ -36,7 +36,7 @@ if (isset($_SESSION["usuario"])) {
 					
 			
           //  echo "<td>$dato</td>";
-			echo "<tr><td> " . $fil['Apellido'].", ".$fil['Nombre']. "</td><td>Saldo:  </td><td><input name='saldo' class='input input-small' type='text' placeholder=" . $fil['Saldo'] . ">";
+			echo "<tr><td> " . $fil['Apellido'].", ".$fil['Nombre']. "</td><td>Saldo:  </td><td><input name='saldo' class='input input-small' type='number' style='height:26px'  placeholder=" . $fil['Saldo'] . ">";
         
         
         echo "<input type='hidden' name='id' value='".$fil["idProfesores"]."'>";

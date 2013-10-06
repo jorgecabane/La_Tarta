@@ -25,7 +25,7 @@ if (isset($_SESSION["usuario"])) {
 				
                 while ($fil = mysql_fetch_assoc($resultado)) {
 				echo "<form method='POST' action='inventario.php'>";
-                    echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td><input name='stock' class='input input-small' type='text' placeholder=" . $fil['S'] . ">";
+                    echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td><input name='stock' class='input input-small' type='number' style='height:26px'  placeholder=" . $fil['S'] . ">";
 					//echo "<tr><td> " . $fil['Apellido'].", ".$fil['Nombre']. "</td><td>Saldo:  </td><td><input name='saldo' class='input input-small' type='text' placeholder=" . $fil['Saldo'] . ">";
 					
 					

@@ -8,22 +8,20 @@
 		if (isset($_SESSION["usuario"]))
 		{
 		
-		if (isset($_POST['nombre'])    &&    isset($_POST['apellido']) )    {
+		if (isset($_POST['nombre'])    &&    isset($_POST['apellido'])   )    {
 		
 		$nombre=$_POST['nombre'];
 		$apellido=$_POST['apellido'];
 		
 		
-		$query = "Insert into Profesores (Nombre, Apellido, Saldo)                           
-		Values ('$nombre','$apellido',0)";                     //este query si funciona
+		$query = "Insert into Profesores
+		Values (NULL,'$nombre','$apellido',0)";
     //echo $query;
     $resultado = mysql_query($query) or die(mysql_error());
-
-           
 		
 		if($resultado)
 		{
-	//echo $holi;
+		$_SESSION['profe']=$nombre;
 		header("location:ingresoProfesorNuevo.php");
 		} // si funciono el query
 		else
@@ -32,7 +30,17 @@
 		
 		} // no funciono el query
 		
-				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		} // si estan posteados todos los campos
 		else

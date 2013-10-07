@@ -2,6 +2,8 @@
  session_start();
 include "header.php";
 if (isset($_SESSION["usuario"])) {
+if ($_SESSION["usuario"] == 'admin'|| $_SESSION["usuario"] == 'venta') {
+
 ?>
 <div class="container-fluid">
     
@@ -71,8 +73,11 @@ $resultado23=mysql_query($query33);
 				 // quiero que despues de que se cambie, se actualice, no tener que hacer f5 para que se muestre y que no pregunte al hacer f5.
 				} // si esque se apreto el boton cambiar
 				
-		
+		}
+		else{//si no eres admin
+		echo "No tienes los privilegios suficientes para esta pagina";
 				} // si estas iniciado
+				}
 else
 {
 echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>" ;

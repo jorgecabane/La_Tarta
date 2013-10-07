@@ -4,7 +4,7 @@
     include_once "conexion.php";
     include "header.php";
 		if (isset($_SESSION["usuario"])) {
-	if($_SESSION['usuario']='admin') {
+	if($_SESSION['usuario']=='admin') {
 	
 	
 	?>

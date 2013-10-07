@@ -38,6 +38,10 @@ if (isset($_SESSION["usuario"])) {
                 
 	</tr>
 ";
+                    $excel.="Fecha\tCaja Inicial\tTotal Efectivo\t";  
+    $excel.="Ventas Tarjetas de Credito\tVentas Tarjetas de Debito\tVentas en Efectivo\t"; 
+    $excel.="Ventas con Vales\tTotal en Boleta\tTotal sin Boleta\t"; 
+    $excel.="Ventas Totales\tRetiro de Caja\tNueva Caja\n"; 
 
                     while ($fil = mysql_fetch_assoc($resultado)) {
                         

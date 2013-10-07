@@ -4,7 +4,7 @@
     include_once "conexion.php";
     include "header.php";
 		if (isset($_SESSION["usuario"])) {
-	
+	if($_SESSION['usuario']='admin') {
 	
 	
 	?>
@@ -34,8 +34,23 @@ La Tarta
 
 
 <?php 
-echo '<a href="logout.php">Logout</a>';
+
+
+} // si es admin quien se logea
+
+else 
+{
+?>
+	<html>
+	<pre>
+La Tarta
+
+<a href="Venta.php">Venta</a>
+<?php
 }
+
+echo '<a href="logout.php">Logout</a>';
+}//si existe sesion
 else
 {
 echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>" ;

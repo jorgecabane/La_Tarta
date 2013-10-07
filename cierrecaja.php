@@ -106,7 +106,6 @@ if (isset($_SESSION["usuario"])) {
 
 
 
-                    echo "<div>	<a style='color: #F1F1F1;'href='Latarta.php'/> Volver </a>		</div>";
                 } else {
                     echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>";
                 }
@@ -114,5 +113,6 @@ if (isset($_SESSION["usuario"])) {
             </div>
         </div>
     </div>
+    <div>	<a style='color: #F1F1F1;'href='Latarta.php'/> Volver </a>		</div>
 </body>
 </html>

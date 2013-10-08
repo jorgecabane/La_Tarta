@@ -3,10 +3,7 @@ session_start();
 include_once "conexion.php";
 include "header.php";
 if (isset($_SESSION["usuario"])) {
-    ?>
-    <html>
-        <div class="container-fluid">
-            <div class="row-fluid"><div class="well well-small"><a class="btn btn-inverse pull-right">Menu <i class="icon icon-white icon-th-list"></i></a><h3><center>Ingreso Funcionario</center></h3></div></div>
+    ?><h3><center>Ingreso Funcionario</center></h3></div></div>
             <div class="row-fluid">
                 <div class="well well-small">
 
@@ -28,9 +25,5 @@ if (isset($_SESSION["usuario"])) {
                     }
                 } else {
                     echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>";
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-</html>
+ include "footer.php";               }
+ 

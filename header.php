@@ -21,3 +21,19 @@
           background: linear-gradient(135deg,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
           ">
+               <div class="container-fluid">
+
+            <div class="row-fluid"><div class="well well-small"><div class="btn-group  pull-right">
+                        <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                            Menu
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="Venta.php">Venta</a></li>
+                            <li><a tabindex="-1" href="cierrecaja.php">Cierre de Caja</a></li>
+                            <li><a tabindex="-1" href="inventario.php">Resumen Inventario</a></li>
+                            <li><a tabindex="-1" href="ResumenProfesores.php">Resumen Profesores</a></li>
+                        </ul>
+                    </div>
+
+        

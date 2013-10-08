@@ -3,9 +3,7 @@
 include "header.php";
 if (isset($_SESSION["usuario"])) {
 ?>
-<div class="container-fluid">
-    
-    <div class="row-fluid"><div class="well well-small"><a class="btn btn-inverse pull-right">Menu <i class="icon icon-white icon-th-list"></i></a><h3><center>Inventario</center></h3></div></div>
+<h3><center>Inventario</center></h3></div></div>
     <div class="row-fluid">
         <div class="well well-small">
             <table  class="table table-bordered table-striped table-hover table-condensed">
@@ -22,20 +20,20 @@ if (isset($_SESSION["usuario"])) {
 
                 $sql = "SELECT Insumos.Nombre N, Inventario.Stock S ,Inventario.Insumos_idInsumos I FROM Inventario, Insumos, Usuarios  WHERE Insumos.idInsumos=Inventario.Insumos_idInsumos and Inventario.Usuarios_idUsuario=Usuarios.idUsuario";
                 $resultado = mysql_query($sql);
-				
+
                 while ($fil = mysql_fetch_assoc($resultado)) {
 				echo "<form method='POST' action='inventario.php'>";
                     echo "<tr><td>Producto</td><td> " . $fil['N'] . "</td><td>Stock:  </td><td><input name='stock' class='input input-small' type='number' style='height:26px'  placeholder=" . $fil['S'] . ">";
 					//echo "<tr><td> " . $fil['Apellido'].", ".$fil['Nombre']. "</td><td>Saldo:  </td><td><input name='saldo' class='input input-small' type='text' placeholder=" . $fil['Saldo'] . ">";
-					
-					
+
+
 					echo "<input type='hidden' name='id' value='".$fil["I"]."'>";
         echo "<input type='submit' value='Cambiar'>";
         echo "</form></td></tr>";
                 }
-				
+
 				if ($_POST['stock']) {
-				
+
 $stock=$_POST['stock'];
 
 
@@ -52,15 +50,15 @@ $resultado23=mysql_query($query33);
 
 
 				print "<meta http-equiv=Refresh content=\"0.0001 ; url=inventario.php\">"; 
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
 				}
-				
-				
+
+
 				}
 				else
 {
@@ -68,9 +66,6 @@ echo "Tu no estas autentificado dirigete al <a href='index.php'/> login </a>" ;
 }
                 ?>
             </table>
-        </div>
-    </div>
-</div>
-<div>	<a style="color: #F1F1F1;"href='Latarta.php'/> Volver </a>		</div>
-</body>
-</html>
+<?php
+include "footer.php";
+?>
